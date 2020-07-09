@@ -1,8 +1,8 @@
 %This Matlab script can be used to generate Figure 3 (a) and (b) in the
 %lecture note:
 %
-%Emil Björnson, Mats Bengtsson, Björn Ottersten, “Optimal Multi-User
-%Transmit Beamforming: Difficult Problem with a Simple Solution Structure,”
+%Emil Bjï¿½rnson, Mats Bengtsson, Bjï¿½rn Ottersten, ï¿½Optimal Multi-User
+%Transmit Beamforming: Difficult Problem with a Simple Solution Structure,ï¿½
 %IEEE Signal Processing Magazine, To appear.
 %
 %Download article: Address will be added here.
@@ -12,8 +12,8 @@
 %power allocation is borrowed from the Matlab package of the following
 %book:
 %
-%Emil Björnson, Eduard Jorswieck, “Optimal Resource Allocation in
-%Coordinated Multi-Cell Systems,” Foundations and Trends in Communications
+%Emil Bjï¿½rnson, Eduard Jorswieck, ï¿½Optimal Resource Allocation in
+%Coordinated Multi-Cell Systems,ï¿½ Foundations and Trends in Communications
 %and Information Theory, vol. 9, no. 2-3, pp. 113-381, 2013.
 %
 %The implementation of the branch-reduce-and-bound (BRB) algorithm, which
@@ -36,10 +36,10 @@ clear all;
 
 %%Simulation parameters
 
-rng('shuffle'); %Initiate the random number generators with a random seed
+%rng('shuffle'); %Initiate the random number generators with a random seed
 %%If rng('shuffle'); is not supported by your Matlab version, you can use
 %%the following commands instead:
-%randn('state',sum(100*clock));
+randn('state',sum(100*clock));
 
 Nantennas = [4 12]; %Number of transmit antennas
 K = 4; %Number of users
@@ -50,7 +50,7 @@ K = 4; %Number of users
 %takes hours or days, while it only takes a few minutes when only the
 %heuristic beamforming schemes are computed. This shows clearly the need
 %for simple heuristic beamforming!
-computeOptimalBeamforming = true;
+computeOptimalBeamforming = false;
 
 %Number of realizations in the Monte Carlo simulations
 nbrOfMonteCarloRealizations = 2; %100;
