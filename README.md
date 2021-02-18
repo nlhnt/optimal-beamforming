@@ -60,3 +60,6 @@ European Research Council under the European Community’s Seventh Framework Pro
 ## License and Referencing
 
 This code package is licensed under the GPLv2 license. If you in any way use this code for research that results in publications, please cite our original article listed above.
+
+## Testing
+To test in Matlab/Octave run `test <function_name>` in the main directory.
