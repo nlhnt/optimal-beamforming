@@ -6,8 +6,8 @@ function wSLNRMAX = functionSLNRMAX(H,eta,D)
 %
 %The references to definitions and equations refer to the following book:
 %
-%Emil Björnson, Eduard Jorswieck, “Optimal Resource Allocation in
-%Coordinated Multi-Cell Systems,” Foundations and Trends in Communications
+%Emil Bjï¿½rnson, Eduard Jorswieck, ï¿½Optimal Resource Allocation in
+%Coordinated Multi-Cell Systems,ï¿½ Foundations and Trends in Communications
 %and Information Theory, vol. 9, no. 2-3, pp. 113-381, 2013.
 %
 %This is version 1.1. (Last edited: 2014-03-26)
@@ -49,7 +49,7 @@ wSLNRMAX = zeros(size(H'));
 
 %Computation of SLNR-MAX, based on Definition 3.5
 for k = 1:Kr
-    effectivechannel = (H*D(:,:,k))'; %Effective channels
+    effectivechannel = (H*D(:,:,k))' %Effective channels
     projectedchannel = (eye(N)/eta(k)+effectivechannel*effectivechannel')\effectivechannel(:,k); %Compute zero-forcing based on channel inversion
     wSLNRMAX(:,k) = projectedchannel/norm(projectedchannel);  %Normalization of zero-forcing direction
 end
@@ -60,11 +60,11 @@ end
 %!    0.3463798865507545 - 0.2959436304501834i	0.428717593984793 - 0.1745054033561354i	-0.06451886696333453 + 0.21950816809492i	-0.6133871186652898 + 0.3584529417431375i;
 %!    0.6496666894842142 - 0.006050820533212617i	0.4161470856235192 + 0.3345735754410368i	-0.4900364211614296 - 0.03295049052757694i	0.5475093195161629 + 0.2651127301627587i;
 %!    0.4889848952633911 - 0.1002053229938145i	-0.5148073666334743 - 0.05004343754291576i	0.3587762455059538 - 0.07340383084744746i	-0.1283085684196549 + 0.1665748442036544i;
-%! ]
+%! ];
 %! H = ctranspose([
 %!    0.013860 + 0.031335i,   1.073221 - 0.940552i,   0.920571 - 1.373000i,   0.442014 - 0.353275i;
 %!    -0.067678 - 0.514558i,   0.785435 + 0.629878i,   0.230476 + 0.989237i,  -1.701096 + 1.125456i;
 %!    0.868633 + 0.569620i,   0.191321 - 0.177566i,  -0.151462 + 0.232256i,   1.203675 + 0.364566i;
 %!    2.037872 - 0.802488i,  -2.043176 - 0.129150i,   0.487697 + 0.379195i,   0.042107 - 0.400414i;
 %! ]);
-%! assert (functionSLNRMAX(H), vector)
+%! assert (functionSLNRMAX(H), vector, eps)

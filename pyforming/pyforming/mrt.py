@@ -1,8 +1,5 @@
 import numpy as np
 import cvxpy
-import logging
-
-logger = logging.getLogger("pyforming")
 
 
 def mrt(h: np.ndarray, d: np.ndarray = None):
