@@ -4,8 +4,8 @@ function wZFBF = functionZFBF(H,D)
 %
 %The references to definitions and equations refer to the following book:
 %
-%Emil Björnson, Eduard Jorswieck, “Optimal Resource Allocation in
-%Coordinated Multi-Cell Systems,” Foundations and Trends in Communications
+%Emil Bjï¿½rnson, Eduard Jorswieck, ï¿½Optimal Resource Allocation in
+%Coordinated Multi-Cell Systems,ï¿½ Foundations and Trends in Communications
 %and Information Theory, vol. 9, no. 2-3, pp. 113-381, 2013.
 %
 %This is version 1.1. (Last edited: 2014-03-26)
@@ -43,6 +43,7 @@ wZFBF = zeros(size(H'));
 %Computation of ZFBF, based on Definition 3.4
 for k = 1:Kr
     effectivechannel = (H*D(:,:,k))'; %Effective channels
+    % b/A
     channelinversion = effectivechannel/(effectivechannel'*effectivechannel); %Compute zero-forcing based on channel inversion
     wZFBF(:,k) = channelinversion(:,k)/norm(channelinversion(:,k));  %Normalization of zero-forcing direction
 end
@@ -60,4 +61,4 @@ end
 %!   0.7236994467439906 - 0.150669495088244i	0.6066910616540805 + 0.3688901068039437i	-0.6464264434179551 - 0.193962534531747i	0.5495144699416846 + 0.4298114980905241i;
 %!   0.2684473029079276 + 0.06945040994327685i	-0.3751410719745281 + 0.04497945784785218i	0.2968207211063859 - 0.1508754857232733i	-0.2078596978975164 + 0.1729486519464096i;
 %! ];
-%! assert (functionZFBF(H), vector)
+%! assert (functionZFBF(H), vector, eps)
