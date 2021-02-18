@@ -49,7 +49,7 @@ wSLNRMAX = zeros(size(H'));
 
 %Computation of SLNR-MAX, based on Definition 3.5
 for k = 1:Kr
-    effectivechannel = (H*D(:,:,k))' %Effective channels
+    effectivechannel = (H*D(:,:,k))'; %Effective channels
     projectedchannel = (eye(N)/eta(k)+effectivechannel*effectivechannel')\effectivechannel(:,k); %Compute zero-forcing based on channel inversion
     wSLNRMAX(:,k) = projectedchannel/norm(projectedchannel);  %Normalization of zero-forcing direction
 end
