@@ -4,8 +4,8 @@ function wMRT = functionMRT(H,D)
 %
 %The references to definitions and equations refer to the following book:
 %
-%Emil Björnson, Eduard Jorswieck, “Optimal Resource Allocation in
-%Coordinated Multi-Cell Systems,” Foundations and Trends in Communications
+%Emil Bjï¿½rnson, Eduard Jorswieck, ï¿½Optimal Resource Allocation in
+%Coordinated Multi-Cell Systems,ï¿½ Foundations and Trends in Communications
 %and Information Theory, vol. 9, no. 2-3, pp. 113-381, 2013.
 %
 %This is version 1.1. (Last edited: 2014-03-26)
@@ -22,7 +22,6 @@ function wMRT = functionMRT(H,D)
 %
 %OUTPUT:
 %wMRT = Kt*Nt x Kr matrix with normalized MRT beamforming
-
 
 
 %Number of users
@@ -57,5 +56,5 @@ end
 %!    -0.0272983418022095 - 0.2075501663917567i	0.2905140192158856 + 0.23297712655492i	0.112156629090746 + 0.4813928013842755i	-0.6818359784525727 + 0.4511070468482195i;
 %!    0.3503685176080653 + 0.2297597662072546i	0.07076515901430729 - 0.06567750652324883i	-0.07370601431534116 + 0.1130228312106263i	0.4824589096464283 + 0.146125918419972i;
 %!    0.8219883330646928 - 0.3236885208808105i	-0.7557229709975188 - 0.04776956155726651i	0.2373281883478954 + 0.1845278162067436i	0.01687739407105918 - 0.160494570251243i;
-%! ]
-%! assert (functionMRT(H), vector)
+%! ];
+%! assert (functionMRT(H), vector, eps)
